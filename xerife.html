@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Xerife do Pelotão</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    textarea {
+      width: 90%;
+      height: 150px;
+      margin: 10px 0;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 14px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #22c55e;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #16a34a;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📋 Xerife do Pelotão</h1>
+
+<h3>📥 Cole a lista do WhatsApp:</h3>
+<textarea id="entrada"></textarea>
+
+<br>
+
+<button onclick="verFaltantes()">🚨 Ver faltantes</button>
+<button onclick="organizarLista()">📋 Organizar lista</button>
+
+<h3>📤 Resultado:</h3>
+<textarea id="saida" readonly></textarea>
+
+<script>
+const pelotao = {
+  2005: "ANDRYOS HELENO ALVES ADEJANIS",
+  2017: "MARLON LUCAS DUARTE DA SILVA",
+  2018: "SAMUEL MONTEIRO BRAGA",
+  2020: "THIAGO DE QUEIROZ SIMÕES",
+  2021: "LUCAS FERREIRA SILVA CAMPOS",
+  2023: "GABRIEL CANOPF CARNEIRO",
+  2032: "RUAN PONTES DE SOUZA SILVEIRA",
+  2037: "EZEQUIEL DA CUNHA RODRIGUES",
+  2038: "ELIEL DOS SANTOS GUEDES",
+  2042: "RODRIGO NOVAES DUARTE",
+  2043: "MARIA EDUARDA CARVALHO CARDOSO",
+  2046: "ANNA CLARA DOS REIS PORTUGAL NEPOMUCENA",
+  2047: "JESSICA VITORIA DE SOUZA NEREU",
+  2048: "ANDRESSA DA FONSECA GOMES",
+  2049: "WEVERTON ARAUJO DE OLIVEIRA",
+  2050: "MILLENA COSTA SANTOS SANTANA",
+  2051: "JULIA NUNES CALZOLARI DE MORAES",
+  2053: "MARIA EDUARDA ALVES ROCHA DA SILVA",
+  2054: "RAFAELA LOUISE FERREIRA",
+  2055: "JENYFER LUIZA DA SILVA BARBOSA",
+  2056: "BEATRIZ NEVES NASCIMENTO",
+  2057: "ANA CLARA GARCES RODRIGUES",
+  2058: "EMILY PONTES CARNEIRO COSTA",
+  2059: "MARIA EDUARDA PALHINHA PINTO BARRETO",
+  2060: "STELLA ROBERTA ALCANTARA DE SOUZA",
+  2061: "PAMELA DE MORAES SOARES",
+  2065: "LUIZ GUSTAVO DE SOUZA MARTINS",
+  2067: "RENAN DE LUCENA DANTAS",
+  2080: "KAYLANI DOS ANJOS VIEIRA"
+};
+
+function extrairNumeros(texto) {
+  return texto.match(/\d{4}/g)?.map(Number) || [];
+}
+
+function verFaltantes() {
+  const texto = document.getElementById("entrada").value;
+
+  const presentes = [...new Set(extrairNumeros(texto))];
+
+  const faltantes = Object.keys(pelotao)
+    .map(Number)
+    .filter(num => !presentes.includes(num))
+    .sort((a, b) => a - b); // crescente
+
+  let resultado = "🚨 FALTANTES:\n\n";
+
+  if (faltantes.length === 0) {
+    resultado += "Todos responderam ✅";
+  } else {
+    faltantes.forEach(num => {
+      resultado += `${num} - ${pelotao[num]}\n`;
+    });
+  }
+
+  document.getElementById("saida").value = resultado;
+}
+
+function organizarLista() {
+  const texto = document.getElementById("entrada").value;
+
+  const linhas = texto.split("\n");
+
+  const cabecalho = [];
+  const rodape = [];
+  const mapa = {};
+
+  const regex = /(\d{4})\s*-\s*(\d+)/;
+
+  let encontrouLista = false;
+
+  linhas.forEach(linha => {
+    const match = linha.match(regex);
+
+    if (match) {
+      encontrouLista = true;
+
+      const numero = Number(match[1]);
+      const quantidade = Number(match[2]);
+
+      mapa[numero] = (mapa[numero] || 0) + quantidade;
+    } else {
+      if (!encontrouLista) {
+        cabecalho.push(linha); // antes da lista
+      } else {
+        rodape.push(linha); // depois da lista
+      }
+    }
+  });
+
+  // ordenar crescente
+  const numerosOrdenados = Object.keys(mapa)
+    .map(Number)
+    .sort((a, b) => a - b);
+
+  // reconstruir texto
+  let resultado = "";
+
+  // mantém cabeçalho
+  resultado += cabecalho.join("\n") + "\n\n";
+
+  // lista organizada
+  numerosOrdenados.forEach(num => {
+    resultado += `${num} - ${mapa[num]}\n`;
+  });
+
+  // mantém rodapé (se houver)
+  if (rodape.length > 0) {
+    resultado += "\n" + rodape.join("\n");
+  }
+
+  document.getElementById("saida").value = resultado;
+}
+</script>
+
+</body>
+</html>
