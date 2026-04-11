@@ -3,36 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <title>Xerife do Pelotão</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    textarea {
-      width: 90%;
-      height: 150px;
-      margin: 10px 0;
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 14px;
-    }
-    button {
-      margin: 5px;
-      padding: 10px 20px;
-      font-size: 15px;
-      border: none;
-      border-radius: 10px;
-      background: #22c55e;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #16a34a;
-    }
-  </style>
+  
+<style>
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background: 
+    url("fundo.png"),
+    radial-gradient(circle at center, rgba(0,0,0,0.6), #000);
+
+  background-blend-mode: soft-light;
+
+  background-size: cover;
+  background-position: center;
+
+  color: #e5e5e5;
+
+  /* display: flex; */ 
+  justify-content: center;
+   text-align: center;
+   padding: 20px;
+}
+
+  .logo {
+    width: 180px;
+
+  filter:
+    drop-shadow(0 0 10px rgba(212,175,55,0.6))
+    drop-shadow(0 0 20px rgba(212,175,55,0.3));
+  }
+
+  h1 {
+  color: #d4af37;
+  letter-spacing: 3px;
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212,175,55,0.5);
+
+  text-shadow:
+    0 0 5px rgba(212,175,55,0.7),
+    0 0 15px rgba(212,175,55,0.4);
+}
+
+  textarea {
+  width: 99%;
+  height: 150px;
+
+  background: rgba(10, 10, 10, 0.85);
+  color: #f5f5f5;
+
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+  padding: 10px;
+
+  box-shadow:
+    0 0 10px rgba(212,175,55,0.2),
+    inset 0 0 10px rgba(255,255,255,0.05);
+}
+
+  button {
+  margin: 6px;
+  padding: 10px 18px;
+
+  border-radius: 10px;
+  border: 1px solid #d4af37;
+
+  background: linear-gradient(145deg, #111, #000);
+  color: #d4af37;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+  button:hover {
+  background: #d4af37;
+  color: #000;
+
+  box-shadow:
+    0 0 10px #d4af37,
+    0 0 20px rgba(212,175,55,0.5);
+}
+
+  .container {
+  background: rgba(0,0,0,0.6);
+
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 15px;
+
+  padding: 20px;
+  margin-top: 30px;
+
+  box-shadow:
+    0 0 20px rgba(212,175,55,0.1),
+    inset 0 0 10px rgba(212,175,55,0.05);
+}
+
+  footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0; /* 👈 garante centralização perfeita */
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 12px;
+  color: #777;
+}
+  h1, h2, p {
+  text-align: center;
+}
+</style>
 </head>
 <body>
 <footer style="
@@ -45,7 +128,7 @@
 ">
   Desenvolvido por Ruan Silveira
 </footer>
-<h1>📋 Xerife do Pelotão</h1>
+<h1>🦅 2° PELOTÃO FALCÃO</h1>
 
 <h3>📥 Cole a lista do WhatsApp:</h3>
 <textarea id="entrada"></textarea>
@@ -55,6 +138,7 @@
 <button onclick="verFaltantes()">🚨 Ver faltantes</button>
 <button onclick="organizarLista()">📋 Organizar lista</button>
 <button onclick="copiarTexto()">📋 Copiar resultado</button>
+<button onclick="limpar()">🧹 Limpar</button>
 
 <h3>📤 Resultado:</h3>
 <textarea id="saida" readonly></textarea>
@@ -184,6 +268,10 @@ function organizarLista() {
   }
 
   document.getElementById("saida").value = resultado;
+}
+function limpar() {
+  document.getElementById("entrada").value = "";
+  document.getElementById("saida").value = "";
 }
 </script>
 
