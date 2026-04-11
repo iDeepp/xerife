@@ -106,7 +106,8 @@ function verFaltantes() {
     .filter(num => !presentes.includes(num))
     .sort((a, b) => a - b); // crescente
 
-  let resultado = "🚨 FALTANTES:\n\n";
+  let resultado = `🚨 FALTANTES (${faltantes.length})\n`;
+resultado += `📊 TOTAL DO PELOTÃO: ${Object.keys(pelotao).length}\n\n`;
 
   if (faltantes.length === 0) {
     resultado += "Todos responderam ✅";
