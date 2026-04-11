@@ -45,6 +45,7 @@
 
 <button onclick="verFaltantes()">🚨 Ver faltantes</button>
 <button onclick="organizarLista()">📋 Organizar lista</button>
+<button onclick="copiarTexto()">📋 Copiar resultado</button>
 
 <h3>📤 Resultado:</h3>
 <textarea id="saida" readonly></textarea>
@@ -107,6 +108,16 @@ function verFaltantes() {
   }
 
   document.getElementById("saida").value = resultado;
+}
+function copiarTexto() {
+  const texto = document.getElementById("saida");
+
+  texto.select();
+  texto.setSelectionRange(0, 99999); // iPhone
+
+  document.execCommand("copy");
+
+  alert("Texto copiado! ✅");
 }
 
 function organizarLista() {
