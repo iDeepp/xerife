@@ -244,7 +244,7 @@
     .stats {
       min-height: 0;
       display: grid;
-      grid-template-rows: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(4, minmax(0, 1fr));
       gap: 12px;
     }
 
@@ -518,7 +518,7 @@
       }
 
       .stats {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: none;
       }
 
@@ -664,6 +664,10 @@
                 <div class="stat-value" id="statTotal">0</div>
               </div>
               <div class="stat-card">
+                <div class="stat-label"><span class="stat-icon">👥</span>Presentes</div>
+                <div class="stat-value" id="statPresentes">0</div>
+              </div>
+              <div class="stat-card">
                 <div class="stat-label"><span class="stat-icon">⚠</span>Faltantes</div>
                 <div class="stat-value" id="statFaltantes">0</div>
               </div>
@@ -735,10 +739,13 @@
       2080: "KAYLANI DOS ANJOS VIEIRA"
     };
 
+    const TOTAL_PELOTAO = Object.keys(pelotao).length;
+
     const entrada = document.getElementById("entrada");
     const saida = document.getElementById("saida");
     const estadoVazio = document.getElementById("estadoVazio");
     const statTotal = document.getElementById("statTotal");
+    const statPresentes = document.getElementById("statPresentes");
     const statFaltantes = document.getElementById("statFaltantes");
     const statDuplicados = document.getElementById("statDuplicados");
 
@@ -763,19 +770,21 @@
 
     function calcularMetricas(texto) {
       const numeros = extrairNumeros(texto);
-      const unicos = [...new Set(numeros)];
+      const presentes = [...new Set(numeros)];
 
       return {
-        total: unicos.length,
-        faltantes: unicos.length
-          ? Object.keys(pelotao).map(Number).filter((num) => !unicos.includes(num)).length
+        total: TOTAL_PELOTAO,
+        presentes: presentes.length,
+        faltantes: presentes.length
+          ? Object.keys(pelotao).map(Number).filter((num) => !presentes.includes(num)).length
           : 0,
         duplicados: contarDuplicados(numeros)
       };
     }
 
-    function atualizarResumo(metricas = { total: 0, faltantes: 0, duplicados: 0 }) {
-      statTotal.textContent = metricas.total;
+    function atualizarResumo(metricas = { total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 }) {
+      statTotal.textContent = TOTAL_PELOTAO;
+      statPresentes.textContent = metricas.presentes || 0;
       statFaltantes.textContent = metricas.faltantes;
       statDuplicados.textContent = metricas.duplicados;
     }
@@ -799,7 +808,8 @@
         .sort((a, b) => a - b);
 
       let resultado = `🚨 FALTANTES (${faltantes.length})\n`;
-      resultado += `📊 TOTAL DO PELOTÃO: ${Object.keys(pelotao).length}\n\n`;
+      resultado += `📊 TOTAL DO PELOTÃO: ${TOTAL_PELOTAO}\n`;
+      resultado += `👥 PRESENTES: ${presentes.length}\n\n`;
 
       if (presentes.length === 0) {
         resultado += "Nenhum número foi identificado na entrada.\nCole a lista e tente novamente.";
@@ -812,7 +822,7 @@
       }
 
       definirResultado(resultado, {
-        total: presentes.length,
+        presentes: presentes.length,
         faltantes: presentes.length ? faltantes.length : 0,
         duplicados: contarDuplicados(extrairNumeros(texto))
       });
@@ -870,7 +880,7 @@
 
       if (numerosOrdenados.length === 0) {
         definirResultado("Nenhuma linha no formato 0000 - 0 foi encontrada para organizar.", {
-          total: 0,
+          presentes: 0,
           faltantes: 0,
           duplicados: 0
         });
@@ -892,7 +902,7 @@
       }
 
       definirResultado(resultado, {
-        total: numerosOrdenados.length,
+        presentes: numerosOrdenados.length,
         faltantes: Object.keys(pelotao).map(Number).filter((num) => !numerosOrdenados.includes(num)).length,
         duplicados: contarDuplicados(extrairNumeros(texto))
       });
@@ -901,7 +911,7 @@
     function limpar() {
       entrada.value = "";
       saida.value = "";
-      atualizarResumo({ total: 0, faltantes: 0, duplicados: 0 });
+      atualizarResumo({ total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 });
       atualizarEstadoVazio();
       entrada.focus();
     }
@@ -912,7 +922,7 @@
       }
     });
 
-    atualizarResumo({ total: 0, faltantes: 0, duplicados: 0 });
+    atualizarResumo({ total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 });
     atualizarEstadoVazio();
   </script>
 </body>
