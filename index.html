@@ -103,20 +103,28 @@
     inset 0 0 10px rgba(212,175,55,0.05);
 }
 
-  footer {
+footer {
   position: fixed;
   bottom: 10px;
   left: 0;
-  right: 0; /* 👈 garante centralização perfeita */
+  right: 0; /* garante centralização perfeita */
 
   display: flex;
   justify-content: center;
 
   font-size: 12px;
-  color: #777;
-  border-top: 1px solid rgba(212,175,55,0.3);
+  color: rgba(212,175,55,0.7); /* tom dourado semelhante */
   padding-top: 5px;
+
+  /* linha dourada que se apaga nas extremidades */
+  border-top: none;
+  background: linear-gradient(to right, rgb(212 175 55 / 10%) 0%, rgba(212, 175, 55, 0.3) 50%, rgb(212 175 55 / 10%) 100%);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 1px; /* altura da linha */
 }
+
+
   h1, h2, p {
   text-align: center;
 }
