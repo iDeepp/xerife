@@ -25,17 +25,8 @@
       --panel-padding: clamp(16px, 2.2vh, 24px);
       --transition: 180ms ease;
     }
-
-    * {
-      box-sizing: border-box;
-      min-width: 0;
-    }
-
-    html,
-    body {
-      height: 100%;
-    }
-
+    * { box-sizing: border-box; min-width: 0; }
+    html, body { height: 100%; }
     body {
       margin: 0;
       font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
@@ -52,7 +43,6 @@
       background-attachment: fixed;
       overflow: hidden;
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -65,7 +55,6 @@
       mix-blend-mode: screen;
       opacity: 0.88;
     }
-
     .page {
       position: relative;
       z-index: 1;
@@ -75,7 +64,6 @@
       grid-template-rows: auto minmax(0, 1fr) auto;
       gap: var(--gap);
     }
-
     .app {
       width: min(1320px, 100%);
       margin: 0 auto;
@@ -83,14 +71,12 @@
       display: grid;
       grid-template-rows: minmax(0, 1fr);
     }
-
     .hero {
       width: min(1320px, 100%);
       margin: 0 auto;
       text-align: center;
       padding-top: 2px;
     }
-
     .brand {
       display: inline-flex;
       align-items: center;
@@ -98,7 +84,6 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-
     .brand-icon {
       width: clamp(36px, 4vh, 44px);
       height: clamp(36px, 4vh, 44px);
@@ -113,7 +98,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.12);
       font-size: clamp(18px, 2.4vh, 22px);
     }
-
     h1 {
       margin: 0;
       font-size: clamp(1.85rem, 5vh, 3.4rem);
@@ -126,25 +110,18 @@
         0 0 8px rgba(212, 175, 55, 0.34),
         0 0 24px rgba(212, 175, 55, 0.18);
     }
-
     .hero-subtitle {
       margin: clamp(6px, 0.9vh, 10px) 0 0;
       font-size: clamp(1rem, 2.1vh, 1.22rem);
       color: rgba(255, 248, 236, 0.82);
     }
-
-    .hero-subtitle strong {
-      color: #ffffff;
-      font-weight: 800;
-    }
-
+    .hero-subtitle strong { color: #ffffff; font-weight: 800; }
     .dashboard {
       min-height: 0;
       display: grid;
       grid-template-rows: minmax(250px, 0.92fr) minmax(280px, 1.08fr);
       gap: var(--gap);
     }
-
     .card {
       position: relative;
       background: linear-gradient(180deg, rgba(14, 14, 14, 0.92), rgba(8, 8, 8, 0.88));
@@ -158,7 +135,6 @@
       backdrop-filter: blur(10px);
       min-height: 0;
     }
-
     .card::after {
       content: "";
       position: absolute;
@@ -169,7 +145,6 @@
         radial-gradient(circle at 12% 86%, rgba(212, 175, 55, 0.05), transparent 16%);
       opacity: 0.95;
     }
-
     .workspace {
       position: relative;
       z-index: 1;
@@ -177,23 +152,17 @@
       display: grid;
       grid-template-columns: minmax(0, 1.9fr) minmax(280px, 0.92fr);
     }
-
     .panel {
       min-height: 0;
       padding: var(--panel-padding);
       display: grid;
       gap: 12px;
     }
-
-    .entry-panel {
-      grid-template-rows: auto auto minmax(0, 1fr);
-    }
-
+    .entry-panel { grid-template-rows: auto auto minmax(0, 1fr); }
     .summary-panel {
       grid-template-rows: auto minmax(0, 1fr);
       border-left: 1px solid var(--line-soft);
     }
-
     .section-title {
       margin: 0;
       font-size: clamp(1.1rem, 1.9vw, 1.45rem);
@@ -201,14 +170,12 @@
       color: #f8f0db;
       align-self: end;
     }
-
     .section-copy {
       margin: 0;
       color: var(--muted);
       font-size: clamp(0.92rem, 1.55vh, 1rem);
       line-height: 1.45;
     }
-
     textarea {
       width: 100%;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -225,29 +192,20 @@
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
       min-height: 0;
     }
-
-    textarea::placeholder {
-      color: rgba(255, 255, 255, 0.28);
-    }
-
+    textarea::placeholder { color: rgba(255, 255, 255, 0.28); }
     textarea:focus {
       border-color: rgba(212, 175, 55, 0.58);
       box-shadow:
         0 0 0 4px rgba(212, 175, 55, 0.08),
         0 0 18px rgba(212, 175, 55, 0.1);
     }
-
-    #entrada {
-      height: 100%;
-    }
-
+    #entrada { height: 100%; }
     .stats {
       min-height: 0;
       display: grid;
       grid-template-rows: repeat(4, minmax(0, 1fr));
       gap: 12px;
     }
-
     .stat-card {
       min-height: 0;
       display: flex;
@@ -260,7 +218,6 @@
       border: 1px solid rgba(255, 255, 255, 0.07);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }
-
     .stat-label {
       display: flex;
       align-items: center;
@@ -269,7 +226,6 @@
       font-size: clamp(0.96rem, 1.55vh, 1.06rem);
       font-weight: 650;
     }
-
     .stat-icon {
       color: var(--gold-strong);
       font-size: 1rem;
@@ -277,7 +233,6 @@
       text-align: center;
       opacity: 0.9;
     }
-
     .stat-value {
       color: var(--gold-strong);
       font-size: clamp(1.45rem, 3vh, 2rem);
@@ -285,7 +240,6 @@
       font-weight: 800;
       letter-spacing: 0.03em;
     }
-
     .bottom-card {
       position: relative;
       z-index: 1;
@@ -294,13 +248,11 @@
       grid-template-rows: auto minmax(0, 1fr);
       gap: 12px;
     }
-
     .actions {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
     }
-
     button {
       appearance: none;
       border: 1px solid rgba(212, 175, 55, 0.38);
@@ -324,7 +276,6 @@
         color var(--transition),
         background var(--transition);
     }
-
     button:hover {
       transform: translateY(-1px);
       border-color: rgba(212, 175, 55, 0.62);
@@ -333,11 +284,7 @@
         0 14px 30px rgba(0, 0, 0, 0.28),
         0 0 20px rgba(212, 175, 55, 0.12);
     }
-
-    button:active {
-      transform: translateY(0);
-    }
-
+    button:active { transform: translateY(0); }
     .btn-primary {
       color: #1a1302;
       background: linear-gradient(180deg, #f3cf67, #d4af37);
@@ -347,17 +294,8 @@
         0 12px 28px rgba(0, 0, 0, 0.26),
         0 0 20px rgba(212, 175, 55, 0.12);
     }
-
-    .btn-primary:hover {
-      color: #120d02;
-      background: linear-gradient(180deg, #f6d878, #ddb33b);
-    }
-
-    .btn-danger {
-      color: var(--danger);
-      border-color: rgba(240, 122, 104, 0.28);
-    }
-
+    .btn-primary:hover { color: #120d02; background: linear-gradient(180deg, #f6d878, #ddb33b); }
+    .btn-danger { color: var(--danger); border-color: rgba(240, 122, 104, 0.28); }
     .btn-danger:hover {
       border-color: rgba(240, 122, 104, 0.52);
       box-shadow:
@@ -365,12 +303,7 @@
         0 14px 30px rgba(0, 0, 0, 0.28),
         0 0 20px rgba(240, 122, 104, 0.1);
     }
-
-    .btn-icon {
-      margin-right: 8px;
-      opacity: 0.95;
-    }
-
+    .btn-icon { margin-right: 8px; opacity: 0.95; }
     .result-shell {
       min-height: 0;
       position: relative;
@@ -379,7 +312,6 @@
       background: linear-gradient(180deg, rgba(12, 12, 12, 0.92), rgba(9, 9, 9, 0.9));
       overflow: hidden;
     }
-
     #saida {
       height: 100%;
       border: 0;
@@ -389,11 +321,7 @@
       position: relative;
       z-index: 2;
     }
-
-    #saida:focus {
-      box-shadow: none;
-    }
-
+    #saida:focus { box-shadow: none; }
     .empty-state {
       position: absolute;
       inset: 0;
@@ -405,20 +333,13 @@
       z-index: 1;
       transition: opacity var(--transition), visibility var(--transition);
     }
-
-    .empty-state[hidden] {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
+    .empty-state[hidden] { opacity: 0; visibility: hidden; pointer-events: none; }
     .empty-state-content {
       display: grid;
       gap: 10px;
       justify-items: center;
       max-width: 540px;
     }
-
     .empty-state-icon {
       width: 44px;
       height: 44px;
@@ -430,23 +351,16 @@
       background: rgba(212, 175, 55, 0.08);
       font-size: 1.1rem;
     }
-
-    .empty-state p,
-    .hint {
-      margin: 0;
-    }
-
+    .empty-state p, .hint { margin: 0; }
     .empty-state p {
       font-size: clamp(0.98rem, 1.7vh, 1.14rem);
       line-height: 1.5;
     }
-
     .hint {
       color: rgba(255, 255, 255, 0.42);
       font-size: clamp(0.84rem, 1.3vh, 0.94rem);
       line-height: 1.45;
     }
-
     footer {
       width: min(1320px, 100%);
       margin: 0 auto;
@@ -456,7 +370,6 @@
       padding-top: 8px;
       position: relative;
     }
-
     footer::before {
       content: "";
       position: absolute;
@@ -466,174 +379,68 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.34), transparent);
     }
-
-    .author {
-      color: var(--gold-strong);
-      font-weight: 800;
-    }
+    .author { color: var(--gold-strong); font-weight: 800; }
 
     @media (max-width: 1024px) {
-      .page {
-        padding: 12px;
-      }
-
-      .dashboard {
-        grid-template-rows: minmax(220px, 0.88fr) minmax(260px, 1.12fr);
-      }
-
-      .actions {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .page { padding: 12px; }
+      .dashboard { grid-template-rows: minmax(220px, 0.88fr) minmax(260px, 1.12fr); }
+      .actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-
     @media (max-width: 820px) {
-      body {
-        overflow: auto;
-      }
-
-      .page {
-        height: auto;
-        min-height: 100dvh;
-        grid-template-rows: auto auto auto;
-      }
-
-      .app {
-        display: block;
-      }
-
-      .dashboard {
-        display: grid;
-        grid-template-rows: auto auto;
-        gap: 10px;
-      }
-
-      .workspace {
-        grid-template-columns: 1fr;
-      }
-
-      .summary-panel {
-        border-left: 0;
-        border-top: 1px solid var(--line-soft);
-        gap: 10px;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: none;
-      }
-
+      body { overflow: auto; }
+      .page { height: auto; min-height: 100dvh; grid-template-rows: auto auto auto; }
+      .app { display: block; }
+      .dashboard { display: grid; grid-template-rows: auto auto; gap: 10px; }
+      .workspace { grid-template-columns: 1fr; }
+      .summary-panel { border-left: 0; border-top: 1px solid var(--line-soft); gap: 10px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
       .stat-card {
         min-height: 86px;
         align-items: flex-start;
         flex-direction: column;
         justify-content: center;
       }
-
-      .stat-label {
-        gap: 8px;
-        font-size: 0.92rem;
-      }
-
-      .stat-value {
-        font-size: 1.45rem;
-      }
-
-      #entrada {
-        min-height: 220px;
-        height: 220px;
-      }
-
-      .result-shell {
-        min-height: 240px;
-      }
-
-      #saida {
-        min-height: 240px;
-      }
+      .stat-label { gap: 8px; font-size: 0.92rem; }
+      .stat-value { font-size: 1.45rem; }
+      #entrada { min-height: 220px; height: 220px; }
+      .result-shell { min-height: 240px; }
+      #saida { min-height: 240px; }
     }
-
     @media (max-width: 560px) {
       :root {
         --shell-padding: 10px;
         --gap: 10px;
         --panel-padding: 14px;
       }
-
-      .brand {
-        gap: 8px;
-      }
-
+      .brand { gap: 8px; }
       h1 {
         font-size: clamp(1.5rem, 8.5vw, 2.2rem);
         letter-spacing: 0.06em;
       }
-
-      .hero-subtitle {
-        font-size: 0.98rem;
-      }
-
-      .section-title {
-        font-size: 1rem;
-      }
-
-      .section-copy {
-        font-size: 0.89rem;
-      }
-
-      .stats {
-        gap: 8px;
-      }
-
+      .hero-subtitle { font-size: 0.98rem; }
+      .section-title { font-size: 1rem; }
+      .section-copy { font-size: 0.89rem; }
+      .stats { gap: 8px; }
       .stat-card {
         border-radius: 12px;
         padding: 10px 12px;
         min-height: 78px;
       }
-
-      .stat-label {
-        font-size: 0.84rem;
-      }
-
-      .stat-icon {
-        width: 16px;
-      }
-
-      .stat-value {
-        font-size: 1.25rem;
-      }
-
-      .actions {
-        gap: 10px;
-      }
-
+      .stat-label { font-size: 0.84rem; }
+      .stat-icon { width: 16px; }
+      .stat-value { font-size: 1.25rem; }
+      .actions { gap: 10px; }
       button {
         min-height: 48px;
         border-radius: 14px;
         font-size: 0.95rem;
         padding: 10px 12px;
       }
-
-      #entrada {
-        min-height: 190px;
-        height: 190px;
-      }
-
-      .result-shell,
-      #saida {
-        min-height: 210px;
-      }
-
-      .empty-state {
-        padding: 18px;
-      }
-
-      .hint {
-        display: none;
-      }
-
-      footer {
-        font-size: 0.8rem;
-      }
+      #entrada { min-height: 190px; height: 190px; }
+      .result-shell, #saida { min-height: 210px; }
+      .empty-state { padding: 18px; }
+      .hint { display: none; }
+      footer { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -652,8 +459,8 @@
         <section class="card workspace">
           <div class="panel entry-panel">
             <h2 class="section-title">Cole aqui a lista do WhatsApp</h2>
-            <p class="section-copy">Um número por linha ou cole a mensagem completa do grupo para organizar tudo automaticamente.</p>
-            <textarea id="entrada" placeholder="2005 - 1&#10;2017 - 1&#10;2020 - 2"></textarea>
+            <p class="section-copy">Use número, nome ou os dois. Pode colar a mensagem completa do WhatsApp que o sistema tenta identificar cada pessoa automaticamente.</p>
+            <textarea id="entrada" placeholder="Anna Portugal (metade)&#10;2049 - Weverton Araujo&#10;Calzolari (valor integral)"></textarea>
           </div>
 
           <aside class="panel summary-panel">
@@ -693,7 +500,7 @@
               <div class="empty-state-content">
                 <div class="empty-state-icon">⟳</div>
                 <p>O resultado vai aparecer aqui após processar a lista.</p>
-                <div class="hint">Use “Organizar lista” para ordenar ou “Ver faltantes” para conferir quem ainda não respondeu.</div>
+                <div class="hint">Use “Organizar lista” para ordenar por número oficial ou “Ver faltantes” para conferir cada bloco da mensagem.</div>
               </div>
             </div>
           </div>
@@ -707,223 +514,678 @@
   </div>
 
   <script>
-    const pelotao = {
-      2005: "ANDRYOS HELENO ALVES ADEJANIS",
-      2017: "MARLON LUCAS DUARTE DA SILVA",
-      2018: "SAMUEL MONTEIRO BRAGA",
-      2020: "THIAGO DE QUEIROZ SIMÕES",
-      2021: "LUCAS FERREIRA SILVA CAMPOS",
-      2023: "GABRIEL CANOPF CARNEIRO",
-      2032: "RUAN PONTES DE SOUZA SILVEIRA",
-      2037: "EZEQUIEL DA CUNHA RODRIGUES",
-      2038: "ELIEL DOS SANTOS GUEDES",
-      2042: "RODRIGO NOVAES DUARTE",
-      2043: "MARIA EDUARDA CARVALHO CARDOSO",
-      2046: "ANNA CLARA DOS REIS PORTUGAL NEPOMUCENA",
-      2047: "JESSICA VITORIA DE SOUZA NEREU",
-      2048: "ANDRESSA DA FONSECA GOMES",
-      2049: "WEVERTON ARAUJO DE OLIVEIRA",
-      2050: "MILLENA COSTA SANTOS SANTANA",
-      2051: "JULIA NUNES CALZOLARI DE MORAES",
-      2053: "MARIA EDUARDA ALVES ROCHA DA SILVA",
-      2054: "RAFAELA LOUISE FERREIRA",
-      2055: "JENYFER LUIZA DA SILVA BARBOSA",
-      2056: "BEATRIZ NEVES NASCIMENTO",
-      2057: "ANA CLARA GARCES RODRIGUES",
-      2058: "EMILY PONTES CARNEIRO COSTA",
-      2059: "MARIA EDUARDA PALHINHA PINTO BARRETO",
-      2060: "STELLA ROBERTA ALCANTARA DE SOUZA",
-      2061: "PAMELA DE MORAES SOARES",
-      2065: "LUIZ GUSTAVO DE SOUZA MARTINS",
-      2067: "RENAN DE LUCENA DANTAS",
-      2080: "KAYLANI DOS ANJOS VIEIRA"
-    };
+const pelotao = {
+  2005: "ANDRYOS HELENO ALVES ADEJANIS",
+  2017: "MARLON LUCAS DUARTE DA SILVA",
+  2018: "SAMUEL MONTEIRO BRAGA",
+  2020: "THIAGO DE QUEIROZ SIMÕES",
+  2021: "LUCAS FERREIRA SILVA CAMPOS",
+  2023: "GABRIEL CANOPF CARNEIRO",
+  2032: "RUAN PONTES DE SOUZA SILVEIRA",
+  2037: "EZEQUIEL DA CUNHA RODRIGUES",
+  2038: "ELIEL DOS SANTOS GUEDES",
+  2042: "RODRIGO NOVAES DUARTE",
+  2043: "MARIA EDUARDA CARVALHO CARDOSO",
+  2046: "ANNA CLARA DOS REIS PORTUGAL NEPOMUCENA",
+  2047: "JESSICA VITORIA DE SOUZA NEREU",
+  2048: "ANDRESSA DA FONSECA GOMES",
+  2049: "WEVERTON ARAUJO DE OLIVEIRA",
+  2050: "MILLENA COSTA SANTOS SANTANA",
+  2051: "JULIA NUNES CALZOLARI DE MORAES",
+  2053: "MARIA EDUARDA ALVES ROCHA DA SILVA",
+  2054: "RAFAELA LOUISE FERREIRA",
+  2055: "JENYFER LUIZA DA SILVA BARBOSA",
+  2056: "BEATRIZ NEVES NASCIMENTO",
+  2057: "ANA CLARA GARCES RODRIGUES",
+  2058: "EMILY PONTES CARNEIRO COSTA",
+  2059: "MARIA EDUARDA PALHINHA PINTO BARRETO",
+  2060: "STELLA ROBERTA ALCANTARA DE SOUZA",
+  2061: "PAMELA DE MORAES SOARES",
+  2065: "LUIZ GUSTAVO DE SOUZA MARTINS",
+  2067: "RENAN DE LUCENA DANTAS",
+  2080: "KAYLANI DOS ANJOS VIEIRA"
+};
 
-    const TOTAL_PELOTAO = Object.keys(pelotao).length;
+const TOTAL_PELOTAO = Object.keys(pelotao).length;
 
-    const entrada = document.getElementById("entrada");
-    const saida = document.getElementById("saida");
-    const estadoVazio = document.getElementById("estadoVazio");
-    const statTotal = document.getElementById("statTotal");
-    const statPresentes = document.getElementById("statPresentes");
-    const statFaltantes = document.getElementById("statFaltantes");
-    const statDuplicados = document.getElementById("statDuplicados");
+const STOPWORDS_NOME = new Set(["A", "AS", "O", "OS", "DE", "DA", "DO", "DOS", "DAS", "E"]);
+const TOKENS_IGNORADOS_LINHA = new Set([
+  ...STOPWORDS_NOME,
+  "LISTA", "PELOTAO", "QUEM", "JA", "PAGOU", "PAGO", "PAGARAM", "CAMISA", "BANDEIRAO",
+  "VALOR", "INTEGRAL", "METADE", "TOTAL", "PRESENTES", "FALTANTES", "DUPLICADOS", "PIX",
+  "PENDENTE", "PENDENTES", "PAGAMENTO", "PAGAR", "PAGA", "PAGAM", "COMPROVANTE",
+  "RESPONDEU", "RESPONDERAM", "GRUPO", "PESSOA", "PESSOAS", "VALORES", "FALTOU", "FALTAM",
+  "PESSOAL", "OK"
+]);
+const CABECALHO_PALAVRAS = ["LISTA", "PELOTAO", "PAGOU", "CAMISA", "BANDEIRAO", "PRESENTES", "FALTANTES"];
 
-    function extrairNumeros(texto) {
-      return texto.match(/\d{4}/g)?.map(Number) || [];
+const entrada = document.getElementById("entrada");
+const saida = document.getElementById("saida");
+const estadoVazio = document.getElementById("estadoVazio");
+const statTotal = document.getElementById("statTotal");
+const statPresentes = document.getElementById("statPresentes");
+const statFaltantes = document.getElementById("statFaltantes");
+const statDuplicados = document.getElementById("statDuplicados");
+
+function normalizarTexto(texto = "") {
+  return String(texto)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase()
+    .replace(/[ºª]/g, " ")
+    .replace(/[^A-Z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function tokenizarTexto(texto, removerIgnorados = true) {
+  const tokens = normalizarTexto(texto).split(" ").filter(Boolean);
+  return removerIgnorados ? tokens.filter((token) => !TOKENS_IGNORADOS_LINHA.has(token)) : tokens;
+}
+
+function limparLinhaParaNome(linha) {
+  return String(linha)
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/\b\d{4}\b/g, " ");
+}
+
+const membros = Object.entries(pelotao).map(([numero, nome]) => ({
+  numero: Number(numero),
+  nome,
+  nomeNormalizado: normalizarTexto(nome),
+  tokensBrutos: tokenizarTexto(nome, false),
+  tokensSignificativos: tokenizarTexto(nome, false).filter((token) => !STOPWORDS_NOME.has(token)),
+  aliases: new Set()
+}));
+
+const frequenciaTokens = {};
+membros.forEach((membro) => {
+  [...new Set(membro.tokensSignificativos)].forEach((token) => {
+    frequenciaTokens[token] = (frequenciaTokens[token] || 0) + 1;
+  });
+});
+
+function obterMembro(numero) {
+  return membros.find((membro) => membro.numero === Number(numero));
+}
+
+function adicionarAlias(numero, alias) {
+  const membro = obterMembro(numero);
+  const aliasNormalizado = normalizarTexto(alias);
+  if (!membro || !aliasNormalizado) {
+    return;
+  }
+  membro.aliases.add(aliasNormalizado);
+}
+
+membros.forEach((membro) => {
+  adicionarAlias(membro.numero, membro.nome);
+  const tokens = membro.tokensSignificativos;
+
+  tokens.forEach((token) => {
+    if (token.length >= 4 && frequenciaTokens[token] === 1) {
+      adicionarAlias(membro.numero, token);
     }
+  });
 
-    function contarDuplicados(numeros) {
-      const vistos = new Set();
-      const repetidos = new Set();
+  if (tokens.length >= 2) {
+    adicionarAlias(membro.numero, `${tokens[0]} ${tokens[tokens.length - 1]}`);
+    adicionarAlias(membro.numero, `${tokens[0]} ${tokens[1]}`);
+    adicionarAlias(membro.numero, `${tokens[Math.max(tokens.length - 2, 0)]} ${tokens[tokens.length - 1]}`);
+    adicionarAlias(membro.numero, `${tokens[0].charAt(0)} ${tokens[tokens.length - 1]}`);
+  }
 
-      numeros.forEach((numero) => {
-        if (vistos.has(numero)) {
-          repetidos.add(numero);
-        } else {
-          vistos.add(numero);
-        }
-      });
-
-      return repetidos.size;
+  for (let i = 0; i < tokens.length; i += 1) {
+    for (let j = i + 1; j < tokens.length; j += 1) {
+      const tokenA = tokens[i];
+      const tokenB = tokens[j];
+      if ((frequenciaTokens[tokenA] === 1 || frequenciaTokens[tokenB] === 1) && tokenA.length >= 2 && tokenB.length >= 2) {
+        adicionarAlias(membro.numero, `${tokenA} ${tokenB}`);
+      }
     }
+  }
+});
 
-    function calcularMetricas(texto) {
-      const numeros = extrairNumeros(texto);
-      const presentes = [...new Set(numeros)];
+const aliasesManuais = {
+  2005: ["ADEJANIS"],
+  2017: ["DUARTE", "MARLON DUARTE", "MARLON"],
+  2018: ["SAMUEL MONTEIRO"],
+  2020: ["QUEIROZ"],
+  2021: ["FERREIRA CAMPOS"],
+  2023: ["CANOPF"],
+  2032: ["RUAN", "SILVEIRA", "RUAN SILVEIRA"],
+  2037: ["EZEQUIEL"],
+  2038: ["GUEDES", "E GUEDES", "ELIEL GUEDES"],
+  2042: ["NOVAES", "RODRIGO NOVAES"],
+  2043: ["CARDOSO", "EDUARDA CARDOSO"],
+  2046: ["ANNA PORTUGAL", "ANNA", "PORTUGAL"],
+  2047: ["JESSICA NEREU", "JESSICA", "NEREU"],
+  2048: ["ANDRESSA GOMES", "ANDRESSA"],
+  2049: ["WEVERTON ARAUJO", "WEVERTON"],
+  2050: ["MILLENA SANTANA", "MILLENA"],
+  2051: ["CALZOLARI", "JULIA CALZOLARI", "CALZOLARI DE MORAES"],
+  2053: ["EDUARDA ROCHA", "ROCHA"],
+  2054: ["RAFAELA LOUISE", "RAFAELA"],
+  2055: ["BARBOSA"],
+  2056: ["NEVES"],
+  2057: ["ANA GARCES", "GARCES"],
+  2058: ["EMILY"],
+  2059: ["M PALHINHA", "PALHINHA", "MARIA PALHINHA"],
+  2061: ["DE MORAES", "PAMELA DE MORAES", "PAMELA"],
+  2065: ["LUIZ GUSTAVO", "GUSTAVO MARTINS"],
+  2067: ["RENAN"],
+  2080: ["VIEIRA"]
+};
 
+Object.entries(aliasesManuais).forEach(([numero, aliases]) => {
+  aliases.forEach((alias) => adicionarAlias(Number(numero), alias));
+});
+
+const aliasMap = {};
+membros.forEach((membro) => {
+  membro.aliases.forEach((alias) => {
+    aliasMap[alias] = aliasMap[alias] || new Set();
+    aliasMap[alias].add(membro.numero);
+  });
+});
+
+const aliasList = Object.entries(aliasMap)
+  .filter(([, numeros]) => numeros.size === 1)
+  .map(([alias, numeros]) => ({
+    alias,
+    numero: [...numeros][0],
+    tokens: alias.split(" ").filter(Boolean)
+  }))
+  .sort((a, b) => {
+    if (b.tokens.length !== a.tokens.length) {
+      return b.tokens.length - a.tokens.length;
+    }
+    return b.alias.length - a.alias.length;
+  });
+
+function extrairNumerosValidosDaLinha(linha) {
+  const encontrados = String(linha).match(/\b\d{4}\b/g) || [];
+  return [...new Set(encontrados.map(Number).filter((numero) => pelotao[numero]))];
+}
+
+function resolverPorNomeDaLinha(linha) {
+  const linhaLimpa = limparLinhaParaNome(linha);
+  const normalizadaBruta = normalizarTexto(linhaLimpa);
+
+  if (!normalizadaBruta) {
+    return null;
+  }
+
+  const tokensBrutos = new Set(normalizadaBruta.split(" ").filter(Boolean));
+  const tokensLinha = tokenizarTexto(linhaLimpa, true);
+  const conjuntoTokens = new Set(tokensLinha);
+
+  if (!tokensLinha.length) {
+    return null;
+  }
+
+  for (const alias of aliasList) {
+    if (alias.tokens.every((token) => tokensBrutos.has(token))) {
       return {
-        total: TOTAL_PELOTAO,
-        presentes: presentes.length,
-        faltantes: presentes.length
-          ? Object.keys(pelotao).map(Number).filter((num) => !presentes.includes(num)).length
-          : 0,
-        duplicados: contarDuplicados(numeros)
+        numero: alias.numero,
+        confianca: 100,
+        metodo: `alias:${alias.alias}`
       };
     }
+  }
 
-    function atualizarResumo(metricas = { total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 }) {
-      statTotal.textContent = TOTAL_PELOTAO;
-      statPresentes.textContent = metricas.presentes || 0;
-      statFaltantes.textContent = metricas.faltantes;
-      statDuplicados.textContent = metricas.duplicados;
-    }
+  let melhor = null;
+  let segundo = null;
 
-    function atualizarEstadoVazio() {
-      estadoVazio.hidden = Boolean(saida.value.trim());
-    }
+  membros.forEach((membro) => {
+    let score = 0;
+    let correspondencias = 0;
 
-    function definirResultado(texto, metricas) {
-      saida.value = texto.trim();
-      atualizarResumo(metricas);
-      atualizarEstadoVazio();
-    }
-
-    function verFaltantes() {
-      const texto = entrada.value;
-      const presentes = [...new Set(extrairNumeros(texto))];
-      const faltantes = Object.keys(pelotao)
-        .map(Number)
-        .filter((num) => !presentes.includes(num))
-        .sort((a, b) => a - b);
-
-      let resultado = `🚨 FALTANTES (${faltantes.length})\n`;
-      resultado += `📊 TOTAL DO PELOTÃO: ${TOTAL_PELOTAO}\n`;
-      resultado += `👥 PRESENTES: ${presentes.length}\n\n`;
-
-      if (presentes.length === 0) {
-        resultado += "Nenhum número foi identificado na entrada.\nCole a lista e tente novamente.";
-      } else if (faltantes.length === 0) {
-        resultado += "Todos responderam ✅";
-      } else {
-        faltantes.forEach((num) => {
-          resultado += `${num} - ${pelotao[num]}\n`;
-        });
-      }
-
-      definirResultado(resultado, {
-        presentes: presentes.length,
-        faltantes: presentes.length ? faltantes.length : 0,
-        duplicados: contarDuplicados(extrairNumeros(texto))
-      });
-    }
-
-    async function copiarTexto() {
-      if (!saida.value.trim()) {
-        alert("Nada para copiar ainda.");
-        return;
-      }
-
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(saida.value);
-        } else {
-          saida.select();
-          saida.setSelectionRange(0, saida.value.length);
-          document.execCommand("copy");
-          window.getSelection()?.removeAllRanges?.();
+    conjuntoTokens.forEach((token) => {
+      if (membro.tokensSignificativos.includes(token)) {
+        correspondencias += 1;
+        score += 12 / (frequenciaTokens[token] || 1);
+        if (frequenciaTokens[token] === 1) {
+          score += 2;
         }
-
-        alert("Texto copiado! ✅");
-      } catch (error) {
-        alert("Não foi possível copiar automaticamente. Tente copiar manualmente.");
-      }
-    }
-
-    function organizarLista() {
-      const texto = entrada.value;
-      const linhas = texto.split("\n");
-      const cabecalho = [];
-      const rodape = [];
-      const mapa = {};
-      const regex = /(\d{4})\s*-\s*(\d+)/;
-      let encontrouLista = false;
-
-      linhas.forEach((linha) => {
-        const match = linha.match(regex);
-
-        if (match) {
-          encontrouLista = true;
-          const numero = Number(match[1]);
-          const quantidade = Number(match[2]);
-          mapa[numero] = (mapa[numero] || 0) + quantidade;
-        } else if (!encontrouLista) {
-          cabecalho.push(linha);
-        } else {
-          rodape.push(linha);
-        }
-      });
-
-      const numerosOrdenados = Object.keys(mapa)
-        .map(Number)
-        .sort((a, b) => a - b);
-
-      if (numerosOrdenados.length === 0) {
-        definirResultado("Nenhuma linha no formato 0000 - 0 foi encontrada para organizar.", {
-          presentes: 0,
-          faltantes: 0,
-          duplicados: 0
-        });
-        return;
-      }
-
-      let resultado = "";
-
-      if (cabecalho.join("\n").trim()) {
-        resultado += `${cabecalho.join("\n")}\n`;
-      }
-
-      numerosOrdenados.forEach((num) => {
-        resultado += `${num} - ${mapa[num]}\n`;
-      });
-
-      if (rodape.join("\n").trim()) {
-        resultado += `\n${rodape.join("\n")}`;
-      }
-
-      definirResultado(resultado, {
-        presentes: numerosOrdenados.length,
-        faltantes: Object.keys(pelotao).map(Number).filter((num) => !numerosOrdenados.includes(num)).length,
-        duplicados: contarDuplicados(extrairNumeros(texto))
-      });
-    }
-
-    function limpar() {
-      entrada.value = "";
-      saida.value = "";
-      atualizarResumo({ total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 });
-      atualizarEstadoVazio();
-      entrada.focus();
-    }
-
-    entrada.addEventListener("input", () => {
-      if (!saida.value.trim()) {
-        atualizarResumo(calcularMetricas(entrada.value));
+      } else if (token.length === 1 && membro.tokensSignificativos.some((parte) => parte.startsWith(token))) {
+        score += 1.5;
       }
     });
 
-    atualizarResumo({ total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 });
-    atualizarEstadoVazio();
+    if (normalizadaBruta === membro.nomeNormalizado) {
+      score += 120;
+    } else if (normalizadaBruta.includes(membro.nomeNormalizado)) {
+      score += 40;
+    }
+
+    if (correspondencias >= 2) {
+      score += correspondencias * 4;
+    }
+
+    if (!score) {
+      return;
+    }
+
+    const candidato = { numero: membro.numero, confianca: score, metodo: "pontuacao" };
+
+    if (!melhor || candidato.confianca > melhor.confianca) {
+      segundo = melhor;
+      melhor = candidato;
+    } else if (!segundo || candidato.confianca > segundo.confianca) {
+      segundo = candidato;
+    }
+  });
+
+  if (melhor && melhor.confianca >= 10 && (!segundo || (melhor.confianca - segundo.confianca) >= 2)) {
+    return melhor;
+  }
+
+  return null;
+}
+
+function resolverLinha(linha) {
+  const numeros = extrairNumerosValidosDaLinha(linha);
+  const numeroEncontrado = numeros.length === 1 ? numeros[0] : null;
+  const porNome = resolverPorNomeDaLinha(linha);
+
+  if (numeroEncontrado && porNome) {
+    if (numeroEncontrado === porNome.numero) {
+      return {
+        tipo: "ok",
+        numero: numeroEncontrado,
+        linhaOriginal: linha,
+        metodo: "numero+nome"
+      };
+    }
+
+    return {
+      tipo: "conflito",
+      linhaOriginal: linha,
+      numeroInformado: numeroEncontrado,
+      numeroPeloNome: porNome.numero,
+      nomeDoNumero: pelotao[numeroEncontrado],
+      nomePeloNome: pelotao[porNome.numero]
+    };
+  }
+
+  if (numeroEncontrado) {
+    return {
+      tipo: "ok",
+      numero: numeroEncontrado,
+      linhaOriginal: linha,
+      metodo: "numero"
+    };
+  }
+
+  if (porNome) {
+    return {
+      tipo: "ok",
+      numero: porNome.numero,
+      linhaOriginal: linha,
+      metodo: "nome"
+    };
+  }
+
+  return null;
+}
+
+function analisarLinhaEntrada(linha) {
+  const texto = String(linha || "");
+  const trim = texto.trim();
+  const resolucao = resolverLinha(texto);
+
+  if (!trim) {
+    return { tipo: "blank", linhaOriginal: texto };
+  }
+
+  if (resolucao) {
+    return { tipo: "entry", linhaOriginal: texto, resolucao };
+  }
+
+  const normalizada = normalizarTexto(texto);
+  const pareceCabecalho = CABECALHO_PALAVRAS.some((palavra) => normalizada.includes(palavra)) || /:\s*$/.test(trim);
+
+  if (pareceCabecalho) {
+    return { tipo: "header", linhaOriginal: texto };
+  }
+
+  if (/[A-Za-zÀ-ÿ]/.test(trim) || /\d{4}/.test(trim)) {
+    return { tipo: "candidate", linhaOriginal: texto };
+  }
+
+  return { tipo: "other", linhaOriginal: texto };
+}
+
+function criarSecao() {
+  return {
+    headerLines: [],
+    items: [],
+    revisar: []
+  };
+}
+
+function transformarAnaliseEmRevisao(analise) {
+  if (analise.resolucao && analise.resolucao.tipo === "conflito") {
+    return {
+      linhaOriginal: analise.linhaOriginal,
+      motivo: "conflito",
+      numeroInformado: analise.resolucao.numeroInformado,
+      numeroPeloNome: analise.resolucao.numeroPeloNome,
+      nomeDoNumero: analise.resolucao.nomeDoNumero,
+      nomePeloNome: analise.resolucao.nomePeloNome
+    };
+  }
+
+  return {
+    linhaOriginal: analise.linhaOriginal,
+    motivo: "nao_identificado"
+  };
+}
+
+function parseSections(texto) {
+  const analises = String(texto).split(/\r?\n/).map(analisarLinhaEntrada);
+  const secoes = [];
+  let pendentes = [];
+  let secaoAtual = null;
+
+  analises.forEach((analise) => {
+    if (analise.tipo === "entry") {
+      if (!secaoAtual) {
+        secaoAtual = criarSecao();
+        secaoAtual.headerLines = pendentes
+          .filter((item) => item.tipo !== "candidate")
+          .map((item) => item.linhaOriginal);
+        secaoAtual.revisar.push(
+          ...pendentes
+            .filter((item) => item.tipo === "candidate")
+            .map(transformarAnaliseEmRevisao)
+        );
+        pendentes = [];
+      }
+
+      if (analise.resolucao.tipo === "ok") {
+        secaoAtual.items.push(analise.resolucao);
+      } else {
+        secaoAtual.revisar.push(transformarAnaliseEmRevisao(analise));
+      }
+      return;
+    }
+
+    if (secaoAtual) {
+      if (analise.tipo === "candidate") {
+        secaoAtual.revisar.push(transformarAnaliseEmRevisao(analise));
+        return;
+      }
+
+      secoes.push(secaoAtual);
+      secaoAtual = null;
+      pendentes = [analise];
+      return;
+    }
+
+    pendentes.push(analise);
+  });
+
+  if (secaoAtual) {
+    secoes.push(secaoAtual);
+    pendentes = [];
+  }
+
+  return {
+    secoes,
+    footerLines: pendentes.map((item) => item.linhaOriginal)
+  };
+}
+
+function parseFallbackFragments(texto) {
+  const fragmentos = String(texto)
+    .split(/[\n,;|•]+/)
+    .map((fragmento) => fragmento.trim())
+    .filter(Boolean);
+
+  if (!fragmentos.length) {
+    return { secoes: [], footerLines: [] };
+  }
+
+  const secao = criarSecao();
+
+  fragmentos.forEach((fragmento) => {
+    const analise = analisarLinhaEntrada(fragmento);
+    if (analise.tipo === "entry") {
+      if (analise.resolucao.tipo === "ok") {
+        secao.items.push(analise.resolucao);
+      } else {
+        secao.revisar.push(transformarAnaliseEmRevisao(analise));
+      }
+    } else if (analise.tipo === "candidate") {
+      secao.revisar.push(transformarAnaliseEmRevisao(analise));
+    }
+  });
+
+  if (!secao.items.length && !secao.revisar.length) {
+    return { secoes: [], footerLines: [] };
+  }
+
+  return { secoes: [secao], footerLines: [] };
+}
+
+function contarDuplicadosPorSecao(items) {
+  const contagem = {};
+  items.forEach((item) => {
+    contagem[item.numero] = (contagem[item.numero] || 0) + 1;
+  });
+  return Object.values(contagem).filter((total) => total > 1).length;
+}
+
+function analisarTexto(texto) {
+  const base = parseSections(texto);
+  const resultado = base.secoes.length ? base : parseFallbackFragments(texto);
+  const presentesUnicos = [...new Set(resultado.secoes.flatMap((secao) => secao.items.map((item) => item.numero)))];
+  const duplicados = resultado.secoes.reduce((total, secao) => total + contarDuplicadosPorSecao(secao.items), 0);
+
+  return {
+    ...resultado,
+    metricas: {
+      total: TOTAL_PELOTAO,
+      presentes: presentesUnicos.length,
+      faltantes: presentesUnicos.length ? TOTAL_PELOTAO - presentesUnicos.length : 0,
+      duplicados
+    }
+  };
+}
+
+function formatarCabecalho(headerLines) {
+  return headerLines
+    .map((linha) => linha.trimEnd())
+    .filter((linha) => linha.trim())
+    .join("\n")
+    .trim();
+}
+
+function limparConteudoLinha(item) {
+  let conteudo = String(item.linhaOriginal || "")
+    .replace(/^\s*\d{4}\s*[-–—:|]?\s*/, "")
+    .replace(/^\s*[\-–—•·*]+\s*/, "")
+    .trim();
+
+  if (item.numero) {
+    const regexNumero = new RegExp(`\\b${item.numero}\\b`, "g");
+    conteudo = conteudo.replace(regexNumero, " ").replace(/\s+/g, " ").trim();
+  }
+
+  return conteudo || pelotao[item.numero] || "";
+}
+
+function formatarLinhaOrganizada(item) {
+  return `${item.numero} - ${limparConteudoLinha(item)}`.trim();
+}
+
+function formatarLinhaRevisao(item) {
+  if (item.motivo === "conflito") {
+    return `${item.linhaOriginal.trim()}  ← revisar: número ${item.numeroInformado} = ${item.nomeDoNumero}; nome = ${item.nomePeloNome}`;
+  }
+  return item.linhaOriginal.trim();
+}
+
+function extrairTituloSecao(secao, indice) {
+  const titulo = formatarCabecalho(secao.headerLines).replace(/\s+/g, " ").trim();
+  return titulo || `LISTA ${indice + 1}`;
+}
+
+function atualizarResumo(metricas = { total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 }) {
+  statTotal.textContent = TOTAL_PELOTAO;
+  statPresentes.textContent = metricas.presentes ?? 0;
+  statFaltantes.textContent = metricas.faltantes ?? 0;
+  statDuplicados.textContent = metricas.duplicados ?? 0;
+}
+
+function atualizarEstadoVazio() {
+  estadoVazio.hidden = Boolean(saida.value.trim());
+}
+
+function definirResultado(texto, metricas) {
+  saida.value = texto.trim();
+  atualizarResumo(metricas);
+  atualizarEstadoVazio();
+}
+
+function calcularMetricas(texto) {
+  return analisarTexto(texto).metricas;
+}
+
+function organizarLista() {
+  const analise = analisarTexto(entrada.value);
+
+  if (!analise.secoes.length) {
+    definirResultado("Nenhum nome ou número do pelotão foi identificado para organizar.", {
+      total: TOTAL_PELOTAO,
+      presentes: 0,
+      faltantes: 0,
+      duplicados: 0
+    });
+    return;
+  }
+
+  const blocos = [];
+
+  analise.secoes.forEach((secao, indice) => {
+    const cabecalho = formatarCabecalho(secao.headerLines);
+    const itensOrdenados = [...secao.items].sort((a, b) => a.numero - b.numero || a.linhaOriginal.localeCompare(b.linhaOriginal, "pt-BR"));
+
+    if (cabecalho) {
+      blocos.push(cabecalho);
+    }
+
+    blocos.push(...itensOrdenados.map(formatarLinhaOrganizada));
+
+    if (secao.revisar.length) {
+      blocos.push("");
+      blocos.push("⚠ Revisar manualmente:");
+      blocos.push(...secao.revisar.map(formatarLinhaRevisao));
+    }
+
+    if (indice < analise.secoes.length - 1) {
+      blocos.push("");
+    }
+  });
+
+  const rodape = analise.footerLines.map((linha) => linha.trimEnd()).filter((linha) => linha.trim()).join("\n");
+  if (rodape) {
+    blocos.push("");
+    blocos.push(rodape);
+  }
+
+  definirResultado(blocos.join("\n"), analise.metricas);
+}
+
+function verFaltantes() {
+  const analise = analisarTexto(entrada.value);
+
+  if (!analise.secoes.length) {
+    definirResultado("Nenhum nome ou número do pelotão foi identificado na entrada.\nCole a lista e tente novamente.", {
+      total: TOTAL_PELOTAO,
+      presentes: 0,
+      faltantes: 0,
+      duplicados: 0
+    });
+    return;
+  }
+
+  const blocos = [];
+
+  analise.secoes.forEach((secao, indice) => {
+    const presentesUnicos = [...new Set(secao.items.map((item) => item.numero))].sort((a, b) => a - b);
+    const faltantes = Object.keys(pelotao)
+      .map(Number)
+      .filter((numero) => !presentesUnicos.includes(numero))
+      .sort((a, b) => a - b);
+
+    if (indice > 0) {
+      blocos.push("");
+    }
+
+    blocos.push(`🚨 FALTANTES - ${extrairTituloSecao(secao, indice)}`);
+    blocos.push(`📊 PRESENTES: ${presentesUnicos.length} | FALTANTES: ${faltantes.length} | TOTAL: ${TOTAL_PELOTAO}`);
+    blocos.push("");
+
+    if (!faltantes.length) {
+      blocos.push("Todos responderam ✅");
+    } else {
+      faltantes.forEach((numero) => {
+        blocos.push(`${numero} - ${pelotao[numero]}`);
+      });
+    }
+
+    if (secao.revisar.length) {
+      blocos.push("");
+      blocos.push("⚠ Linhas para revisar:");
+      blocos.push(...secao.revisar.map(formatarLinhaRevisao));
+    }
+  });
+
+  definirResultado(blocos.join("\n"), analise.metricas);
+}
+
+async function copiarTexto() {
+  if (!saida.value.trim()) {
+    alert("Nada para copiar ainda.");
+    return;
+  }
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(saida.value);
+    } else {
+      saida.select();
+      saida.setSelectionRange(0, saida.value.length);
+      document.execCommand("copy");
+      window.getSelection()?.removeAllRanges?.();
+    }
+
+    alert("Texto copiado! ✅");
+  } catch (error) {
+    alert("Não foi possível copiar automaticamente. Tente copiar manualmente.");
+  }
+}
+
+function limpar() {
+  entrada.value = "";
+  saida.value = "";
+  atualizarResumo({ total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 });
+  atualizarEstadoVazio();
+  entrada.focus();
+}
+
+entrada.addEventListener("input", () => {
+  if (!saida.value.trim()) {
+    atualizarResumo(calcularMetricas(entrada.value));
+  }
+});
+
+atualizarResumo({ total: TOTAL_PELOTAO, presentes: 0, faltantes: 0, duplicados: 0 });
+atualizarEstadoVazio();
+
   </script>
 </body>
 </html>
